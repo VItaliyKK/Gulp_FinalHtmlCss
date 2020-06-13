@@ -1,0 +1,429 @@
+@import 'base/mixin';
+@import 'base/fonts';
+@import 'base/base';
+@import 'components/header';
+@import 'components/footer';
+
+main{
+    width: 940px;
+    margin: 95px auto 100px;
+}
+.section_dreamshare_works{
+    width: 100%;
+    .dreamshare_works_title{
+        @include Fons('Montserrat,600', bold, 26px, 32px);
+        color: #444444;
+        margin-bottom: 35px;
+        text-align: center;
+    }
+    .dreamshare_works_imgs{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+       div{
+           width: 300px;
+           height: 400px;
+           color: #FFFFFF;
+           padding: 0 25px 21px;
+           border-radius: 4px;
+           display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+           span{
+               @include Fons('Montserrat,400', normal, 10px, 12px);
+               letter-spacing: 2px;
+               padding: 5px 14px 3px;
+               background: #FF4E50;
+               width: max-content;
+                border-radius: 40px;
+           }
+           h4{
+               @include Fons('Montserrat,400', bold, 24px, 26px);
+               margin: 15px auto 20px;
+               width: 100%;
+           }
+           p{
+                @include Fons('Roboto,300', 300, 14px, 14px);
+                color: #E3E3E3;
+           }
+       }
+       .dreamshare_works_imgs_1{
+           background-image: url('./../images/dreamshare_works/dreamshare_img_1.jpg');
+           background-position: center;
+            background-size: cover;
+       }
+       .dreamshare_works_imgs_2{
+            background-image: url('./../images/dreamshare_works/dreamshare_img_2.jpg');
+            background-position: center;
+            background-size: cover;
+        }
+        .dreamshare_works_imgs_3{
+            background-image: url('./../images/dreamshare_works/dreamshare_img_3.jpg');
+            background-position: center;
+            background-size: cover;
+        }
+    }
+}
+.section_meet_partner{
+    width: 100%;
+    margin: 95px auto;
+    color: #444444;
+    .meet_partner_title{
+        @include Fons('Montserrat,400', bold, 26px, 32px);
+        text-align: center;
+    }
+    .meet_partner_partners_block{
+        display: flex;
+        justify-content: space-between;
+        margin: 36px auto;
+        .partner_indivitual_block{
+            width: 221px;
+            height: 205px;
+            text-align: center;
+            div{
+                width: min-content;
+                margin: 0 auto;
+            }
+            div img{
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+            }
+            h4{
+                @include Fons('Montserrat,400', bold, 14px, 17px);
+                margin: 17px auto 15px;
+            }
+            p{
+                @include Fons('Roboto,300', 300, 14px, 14px);
+                color: #666666;
+            }
+            .indiv_img1, .indiv_img2, .indiv_img3, .indiv_img4{
+                position: relative;
+            }
+            .indiv_img1:after, .indiv_img2:after, .indiv_img3:after, .indiv_img4:after{
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                border: 4px solid white;
+                padding: 8px;
+            }
+            .indiv_img1:after{
+                content: url('./../images/meet_partner/icons/music.svg');
+                background-color: #FF4E50;
+                box-sizing: content-box;
+            }
+            .indiv_img2:after{
+                content: url('./../images/meet_partner/icons/pen.svg');
+                background-color: #19D4CA;
+                box-sizing: content-box;
+            }
+            .indiv_img3:after{
+                content: url('./../images/meet_partner/icons/camera.svg');
+                background-color: #FFA710;
+                box-sizing: content-box;
+            }
+            .indiv_img4:after{
+                content: url('./../images/meet_partner/icons/plane.svg');
+                background-color: #667DF3;
+                box-sizing: content-box;
+            }
+        }
+    }
+    .meet_partner_button{
+        text-align: center;
+        button{
+            @include Fons('Montserrat,400', bold, 14px, 17px);
+            color: #FF4E50;
+            padding: 12px 22px 11px;
+            border: 2px solid #FF4E50;
+            background-color: white;
+            border-radius: 40px;
+            outline: none;
+        }
+    }
+}
+.section_discover_holiday{
+    width: 100%;
+    color: #FFFFFF;
+    @include Fons('Montserrat,400', bold, 22px, 27px);
+    .section_discover_holiday_title{
+        @include Fons('Montserrat,400', bold, 26px, 32px);
+        color: #444444;
+        margin-bottom: 35px;
+        text-align: center;
+    }
+    .section_discover_holiday_top_block{
+        display: flex;
+        justify-content: space-between;
+        div{
+            border-radius: 4px;
+            text-align: center;
+           width: 300px;
+           height: 310px; 
+           display: flex;
+           align-items: center;
+           justify-content: center;
+        }
+        .section_discover_holiday_top_block_1{
+            background-image: url('./../images/discover_holiday/holiday_img_1.jpg');
+            background-position: center;
+        }
+        .section_discover_holiday_top_block_2{
+            background-image: url('./../images/discover_holiday/holiday_img_2.jpg');
+            background-position: center;
+        }
+        .section_discover_holiday_top_block_3{
+            background-image: url('./../images/discover_holiday/holiday_img_3.jpg');
+            text-align: center;
+            background-position: center;
+        }
+    }
+    .section_discover_holiday_center_block{
+        display: flex;
+        justify-content: space-between;
+        margin: 20px auto;
+        div{
+            border-radius: 4px;
+           height: 310px; 
+           display: flex;
+           align-items: center;
+           justify-content: center;
+        }
+        .section_discover_holiday_center_block_1{
+            background-image: url('./../images/discover_holiday/holiday_img_4.jpg');
+            width: 300px;
+        }
+        .section_discover_holiday_center_block_2{
+            background-image: url('./../images/discover_holiday/holiday_img_5.jpg');
+            width: 620px;
+        }
+    }
+    .section_discover_holiday_bottom_block{
+        display: flex;
+        justify-content: space-between;
+        div{
+            border-radius: 4px;
+            height: 310px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+         }
+        .section_discover_holiday_bottom_block_1{
+            background-image: url('./../images/discover_holiday/holiday_img_6.jpg');
+            width: 620px;
+        }
+        .section_discover_holiday_bottom_block_2{
+            background-image: url('./../images/discover_holiday/holiday_img_7.jpg');
+            width: 300px;
+        }
+    }
+}
+.section_create_holiday{
+    width: 100%;
+    margin: 95px auto 100px;
+    text-align: center;
+    h3{
+        @include Fons('Montserrat,400', bold, 26px, 32px);
+        color: #444444;
+    }
+    p{
+        @include Fons('Roboto,300', 300, 18px, 24px);
+        color: #666666;
+        margin: 43px auto 25px;
+    }
+    .form_block{
+        width: 500px;
+        margin: 0 auto;
+        form{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            input{
+                @include Fons('Roboto,300', 300, 14px, 16px);
+                color: #999999;
+                width: 300px;
+                height: 40px;
+                padding-left: 10px;
+            }
+            button{
+                @include Fons('Montserrat,400', bold, 14px, 17px);
+                color: #FFFFFF;
+                padding: 12px 27px 11px;
+                background: #FF4E50;
+                border-radius: 40px;
+                border: none;
+                outline: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 1120px){
+    body{
+        width: 100%;
+    }
+    main{
+        width: 748px;
+    }
+    .section_dreamshare_works{
+        .dreamshare_works_imgs{
+            & div{
+                width: 236px;
+                padding: 0 20px 16px;
+                h4{
+                    line-height: 14px;
+                }
+            }
+        }
+    }
+    .section_meet_partner{
+        width: 492px;
+        .meet_partner_title{
+            @include Fons('Montserrat,400', bold, 22px, 27px);
+        }
+        .meet_partner_partners_block{
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            .partner_indivitual_block {
+                width: 236px;
+                &:first-child{
+                    margin-bottom: 54px;
+                }
+            }
+        }
+        
+    }
+    .section_discover_holiday{
+        .section_discover_holiday_title{
+            @include Fons('Montserrat,400', bold, 22px, 27px);
+        }
+        .section_discover_holiday_top_block div{
+            width: 236px;
+            padding: 0 15px;
+        }
+        .section_discover_holiday_center_block{
+            .section_discover_holiday_center_block_1{
+                width: 236px;
+                padding: 0 15px;
+            }
+            .section_discover_holiday_center_block_2{
+                width: 492px;
+                padding: 0 15px;
+            }
+        }
+        .section_discover_holiday_bottom_block{
+            .section_discover_holiday_bottom_block_1{
+                width: 492px;
+                padding: 0 15px;
+            }
+            .section_discover_holiday_bottom_block_2{
+                width: 236px;
+                padding: 0 15px;
+            }
+        }
+    }
+    .section_create_holiday{
+        h3{
+            @include Fons('Montserrat,400', bold, 22px, 27px);
+        }
+    }
+}
+
+@media (max-width: 768px){
+    body{
+        width: 100%;
+    }
+    main{
+        width: 300px;
+        margin: 35px auto 40px;
+    }
+    .section_dreamshare_works{
+        .dreamshare_works_title{
+            margin-bottom: 15px;
+        }
+        .dreamshare_works_imgs{
+            flex-direction: column;
+            div{
+                width: 300px;
+                height: 240px;
+                padding: 0 30px 16px 20px;
+            }
+            .dreamshare_works_imgs_1, .dreamshare_works_imgs_2{
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .section_meet_partner{
+        margin: 35px auto;
+        width: 300px;
+        .meet_partner_partners_block {
+            justify-content: center;
+            margin: 14px auto 26px;
+            .partner_indivitual_block:first-child{
+                margin-bottom: 16px;
+            }
+            .partner_indivitual_block {
+                margin-bottom: 16px;
+            }
+        }
+    }
+    .section_discover_holiday{
+        .section_discover_holiday_title{
+            margin-bottom: 33px;
+        }
+        .section_discover_holiday_top_block, .section_discover_holiday_center_block, .section_discover_holiday_bottom_block{
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            div{
+                height: 120px;
+                width: 300px;
+                padding: 0 47px;
+                margin-bottom: 10px;
+            }
+        }
+        .section_discover_holiday_center_block{
+            .section_discover_holiday_center_block_1, .section_discover_holiday_center_block_2{
+                height: 120px;
+                width: 300px;
+                padding: 0 47px;
+                margin-bottom: 10px;
+            }
+            .section_discover_holiday_center_block_2{
+                padding: 0;
+            }
+        }
+        .section_discover_holiday_bottom_block{
+            .section_discover_holiday_bottom_block_1, .section_discover_holiday_bottom_block_2{
+                height: 120px;
+                width: 300px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .section_create_holiday{
+        margin: 35px auto 0px;
+        h3{
+            margin: 0 10px;
+        }
+        p{
+            margin: 9px auto 15px;
+        }
+        .form_block{
+            width: 280px;
+            form{
+                flex-direction: column;
+                input{
+                    width: 100%;
+                }
+                button{
+                    margin-top: 10px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

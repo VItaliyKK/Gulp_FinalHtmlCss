@@ -1,0 +1,97 @@
+footer{
+    height: 224px;
+    width: 100%;
+    border-top: 2px solid #FF4E50;
+    margin-bottom: 36px;
+}
+.footer_container{
+    display: flex;
+    justify-content: space-between;
+    width: 940px;
+    margin: 40px auto 0;
+    .footer_block_right{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        span{
+            color: #CCCCCC;
+            @include Fons('Montserrat,400', bold, 10px, 12px);
+            margin-bottom: 8px;
+            text-align: end;
+            width: 100%;
+        }
+    }
+    .footer_block_left{
+        display: flex;
+        justify-content: space-between;
+        width: 550px;        
+        span{
+            color: #FF4E50;
+            @include Fons('Montserrat,400', normal, 16px, 20px);
+        }
+        .footer_info span, .footer_block_left_partnets{
+            color: #444444;
+            @include Fons('Montserrat,400', bold, 14px, 17px);
+        }
+        .footer_info ul{
+            margin-bottom: 11px;
+        }
+        .footer_info ul li{
+            list-style: none;
+            @include Fons('Roboto,300', 300, 14px, 26px);
+            color: #999999;
+        }
+    }
+}
+
+@media (max-width: 1120px){
+    footer{
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    .footer_container{
+        width: 748px;
+        margin: 40px auto 0;
+        .footer_block_left{
+            width: 450px;
+        }
+    }
+}
+
+@media (max-width: 768px){
+    footer{
+        height: 204px;
+        padding: 0 20px;
+        margin-bottom: 22px;
+        .footer_container{
+            flex-direction: column;
+            margin-top: 19px;
+            width: 100%;
+            .footer_block_left{
+                margin-bottom: 14px;
+                width: 100%;
+                align-items: center;
+                flex-direction: column;
+                .footer_info{
+                    margin: 13px auto 6px;
+                    text-align: center;
+                    ul{
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        margin-bottom: 0;
+                    }
+                    ul li{
+                        margin: 0 5px;
+                    }
+                }
+            }
+            .footer_block_right{
+                align-items: center;
+                span{
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
