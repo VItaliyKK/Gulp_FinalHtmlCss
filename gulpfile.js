@@ -10,8 +10,6 @@ const concat = require('gulp-concat');//для конкатикації файл
 const del = require('del');//для видалення файлів
 const fonter = require('gulp-fonter'); //Білд шрифтів
 
-
-
 //шляхи до файлів
 const paths = {
     images: {
@@ -43,7 +41,7 @@ function browser(done) {
         server: {
             baseDir: './build'
         },
-        port: 3001
+        port: 3002
     });
     done();
 };
@@ -103,6 +101,8 @@ function watch(){
 function clear(){
     return del(['build']);
 }
+
 const build = gulp.series(clear, gulp.parallel(images, styles, fonts, scripts, html));
 gulp.task('build', build);
-gulp.task('default', gulp.parallel(watch, browser, build));
+gulp.task('default', gulp.parallel(watch, build));
+gulp.task('default', browser);
