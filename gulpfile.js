@@ -101,12 +101,6 @@ function watch(){
 function clear(){
     return del(['build']);
 }
-    
-// const build = gulp.series(clear, gulp.parallel(images, styles, fonts, scripts, html), watch);
-// // let loadd = gulp.series(gulp.parallel(watch, build), browser);
-// gulp.task('build', build);
-// // gulp.task('building', gulp.parallel(watch, build));
-// gulp.task('default', browser);
 
 const build = gulp.series(clear, gulp.parallel(images, fonts, styles, scripts, html));
 gulp.task('build', build);
