@@ -1,0 +1,17 @@
+@mixin Fons($font_family, $font_weight, $font_size, $line_height) {
+    @if $font_family{
+    	font-family: $font_family;
+    }
+
+    @if $font_weight{
+    	font-weight: $font_weight;
+    }
+
+    @if $font_size{
+    	font-size: $font_size;
+    }
+
+    @if $line_height{
+    	line-height: $line_height;
+    }
+}

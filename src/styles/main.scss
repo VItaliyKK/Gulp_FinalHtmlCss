@@ -1,8 +1,8 @@
-@import 'base/mixin';
-@import 'base/fonts';
-@import 'base/base';
-@import 'components/header';
-@import 'components/footer';
+@import '_mixin';
+@import '_fonts';
+@import '_reset';
+@import 'header';
+@import 'footer';
 
 main{
     width: 940px;
@@ -48,17 +48,17 @@ main{
            }
        }
        .dreamshare_works_imgs_1{
-           background-image: url('./../images/dreamshare_works/dreamshare_img_1.jpg');
+           background-image: url('../assets/dreamshare_works/dreamshare_img_1.jpg');
            background-position: center;
             background-size: cover;
        }
        .dreamshare_works_imgs_2{
-            background-image: url('./../images/dreamshare_works/dreamshare_img_2.jpg');
+            background-image: url('../assets/dreamshare_works/dreamshare_img_2.jpg');
             background-position: center;
             background-size: cover;
         }
         .dreamshare_works_imgs_3{
-            background-image: url('./../images/dreamshare_works/dreamshare_img_3.jpg');
+            background-image: url('../assets/dreamshare_works/dreamshare_img_3.jpg');
             background-position: center;
             background-size: cover;
         }
@@ -111,22 +111,22 @@ main{
                 padding: 8px;
             }
             .indiv_img1:after{
-                content: url('./../images/meet_partner/icons/music.svg');
+                content: url('../assets/meet_partner/icons/music.svg');
                 background-color: #FF4E50;
                 box-sizing: content-box;
             }
             .indiv_img2:after{
-                content: url('./../images/meet_partner/icons/pen.svg');
+                content: url('../assets/meet_partner/icons/pen.svg');
                 background-color: #19D4CA;
                 box-sizing: content-box;
             }
             .indiv_img3:after{
-                content: url('./../images/meet_partner/icons/camera.svg');
+                content: url('../assets/meet_partner/icons/camera.svg');
                 background-color: #FFA710;
                 box-sizing: content-box;
             }
             .indiv_img4:after{
-                content: url('./../images/meet_partner/icons/plane.svg');
+                content: url('../assets/meet_partner/icons/plane.svg');
                 background-color: #667DF3;
                 box-sizing: content-box;
             }
@@ -168,15 +168,15 @@ main{
            justify-content: center;
         }
         .section_discover_holiday_top_block_1{
-            background-image: url('./../images/discover_holiday/holiday_img_1.jpg');
+            background-image: url('../assets/discover_holiday/holiday_img_1.jpg');
             background-position: center;
         }
         .section_discover_holiday_top_block_2{
-            background-image: url('./../images/discover_holiday/holiday_img_2.jpg');
+            background-image: url('../assets/discover_holiday/holiday_img_2.jpg');
             background-position: center;
         }
         .section_discover_holiday_top_block_3{
-            background-image: url('./../images/discover_holiday/holiday_img_3.jpg');
+            background-image: url('../assets/discover_holiday/holiday_img_3.jpg');
             text-align: center;
             background-position: center;
         }
@@ -193,11 +193,11 @@ main{
            justify-content: center;
         }
         .section_discover_holiday_center_block_1{
-            background-image: url('./../images/discover_holiday/holiday_img_4.jpg');
+            background-image: url('../assets/discover_holiday/holiday_img_4.jpg');
             width: 300px;
         }
         .section_discover_holiday_center_block_2{
-            background-image: url('./../images/discover_holiday/holiday_img_5.jpg');
+            background-image: url('../assets/discover_holiday/holiday_img_5.jpg');
             width: 620px;
         }
     }
@@ -212,11 +212,11 @@ main{
             justify-content: center;
          }
         .section_discover_holiday_bottom_block_1{
-            background-image: url('./../images/discover_holiday/holiday_img_6.jpg');
+            background-image: url('../assets/discover_holiday/holiday_img_6.jpg');
             width: 620px;
         }
         .section_discover_holiday_bottom_block_2{
-            background-image: url('./../images/discover_holiday/holiday_img_7.jpg');
+            background-image: url('../assets/discover_holiday/holiday_img_7.jpg');
             width: 300px;
         }
     }
