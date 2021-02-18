@@ -1,77 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FinalTask HTML&CSS</title>
     <link rel="stylesheet" href="./styles/main.min.css">
 </head>
+
 <body>
-    <header>
-        <div class="header_top">
-            <span>DREAMSHARE</span>
-            <div class="header_top_right">
-                <a href="#" class="header_top_right_login">Log in</a>
-                <a href="#" class="header_top_right_singup">Sing up</a>
+    <header class="header_wrapper">
+        <div class="header">
+            <h1 class="title">DREAMSHARE</h1>
+            <div class="header_items">
+                <a href="#" class="header_item login">Log in</a>
+                <a href="#" class="header_item singup">Sing up</a>
             </div>
         </div>
-        <h1 class="header_title">SHARE YOUR HOLIDAY DREAM</h1>
-        <h3 class="header_title_context">And find the perfect partner to fullfill it</h3>
-        <div class="header_button">
-            <button>Find your holiday partner</button>
-        </div>
     </header>
-    <main>
+    <section class="container_top">
+        <h1 class="container_top_title">SHARE YOUR HOLIDAY DREAM</h1>
+        <h3 class="container_top_context">And find the perfect partner to fullfill it</h3>
+        <button class="container_top_button">Find your holiday partner</button>
+        </div>
+    </section>
+    <main class="main">
         <section class="section_dreamshare_works">
             <h3 class="dreamshare_works_title">How Dreamshare works?</h3>
             <div class="dreamshare_works_imgs">
-                <div class="dreamshare_works_imgs_1">
-                    <span>Step 1</span>
-                    <h4>Sed leo enim, condimentum</h4>
-                    <p>Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.</p>
+                <div class="dreamshare_works_img">
+                    <span class="icon">Step 1</span>
+                    <h4 class="title">Sed leo enim, condimentum</h4>
+                    <p class="description">Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec
+                        rhoncus a leo sit amet facilisis.</p>
                 </div>
-                <div class="dreamshare_works_imgs_2">
-                    <span>Step 2</span>
-                    <h4>Morbi velit risus</h4>
-                    <p>Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.</p>
+                <div class="dreamshare_works_img">
+                    <span class="icon">Step 2</span>
+                    <h4 class="title">Morbi velit risus</h4>
+                    <p class="description">Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec
+                        rhoncus a leo sit amet facilisis.</p>
                 </div>
-                <div class="dreamshare_works_imgs_3">
-                    <span>Step 3</span>
-                    <h4>Sed leo enim, condimentum</h4>
-                    <p>Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.</p>
+                <div class="dreamshare_works_img">
+                    <span class="icon">Step 3</span>
+                    <h4 class="title">Sed leo enim, condimentum</h4>
+                    <p class="description">Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec
+                        rhoncus a leo sit amet facilisis.</p>
                 </div>
             </div>
         </section>
         <section class="section_meet_partner">
             <h3 class="meet_partner_title">Meet a partner for your best holiday</h3>
-            <div class="meet_partner_partners_block ">
-                <div class="partner_indivitual_block ">
-                    <div class="indiv_img1">
-                        <img src="./assets/meet_partner/photo/partners_img_1.jpg" >
+            <div class="meet_partner_partners_wrapper ">
+                <div class="partner_container ">
+                    <div class="partner_photo_box">
+                        <img src="./assets/meet_partner/photo/partners_img_1.jpg">
                     </div>
-                    <h4>Bradley Hunter</h4>
-                    <p>Based in Chicago. I love playing tennis and loud music.</p>
+                    <h4 class="title_name">Bradley Hunter</h4>
+                    <p class="description">Based in Chicago. I love playing tennis and loud music.</p>
                 </div>
-                <div class="partner_indivitual_block">
-                    <div class="indiv_img2">
-                        <img src="./assets/meet_partner/photo/partners_img_2.jpg" >
+                <div class="partner_container">
+                    <div class="partner_photo_box">
+                        <img src="./assets/meet_partner/photo/partners_img_2.jpg">
                     </div>
-                    <h4>Marie Bennett</h4>
-                    <p>Currently living in Colorado. Lover of art, languages and travelling.</p>
+                    <h4 class="title_name">Marie Bennett</h4>
+                    <p class="description">Currently living in Colorado. Lover of art, languages and travelling.</p>
                 </div>
-                <div class="partner_indivitual_block">
-                    <div class="indiv_img3">
-                        <img src="./assets/meet_partner/photo/partners_img_3.jpg" >
+                <div class="partner_container">
+                    <div class="partner_photo_box">
+                        <img src="./assets/meet_partner/photo/partners_img_3.jpg">
                     </div>
-                    <h4>Diana Wells</h4>
-                    <p>Living in Athens, Greece. I love black and white classics, chillout music and green tea.</p>
+                    <h4 class="title_name">Diana Wells</h4>
+                    <p class="description">Living in Athens, Greece. I love black and white classics, chillout music and
+                        green tea.</p>
                 </div>
-                <div class="partner_indivitual_block">
-                    <div class="indiv_img4">
-                        <img src="./assets/meet_partner/photo/partners_img_4.jpg" >
+                <div class="partner_container">
+                    <div class="partner_photo_box">
+                        <img src="./assets/meet_partner/photo/partners_img_4.jpg">
                     </div>
-                    <h4>Christopher Pierce</h4>
-                    <p>Star Wars fanatic. I have a persistent enthusiasm to create new things.</p>
+                    <h4 class="title_name">Christopher Pierce</h4>
+                    <p class="description">Star Wars fanatic. I have a persistent enthusiasm to create new things.</p>
                 </div>
             </div>
             <div class="meet_partner_button">
@@ -80,69 +87,68 @@
         </section>
         <section class="section_discover_holiday">
             <h3 class="section_discover_holiday_title">Discover holiday activity ideas</h3>
-            <div class="section_discover_holiday_top_block">
-                <div class="section_discover_holiday_top_block_1">
+            <div class="section_discover_holiday_box">
+                <div class="section_discover_holiday_elem">
                     <span>Sports and Activis</span>
                 </div>
-                <div class="section_discover_holiday_top_block_2">
+                <div class="section_discover_holiday_elem">
                     <span>Wellness and Health</span>
                 </div>
-                <div class="section_discover_holiday_top_block_3">
+                <div class="section_discover_holiday_elem">
                     <span>Extreme Sports and Expeditions</span>
                 </div>
-            </div>
-            <div class="section_discover_holiday_center_block">
-                <div class="section_discover_holiday_center_block_1">
+                <div class="section_discover_holiday_elem">
                     <span>Games</span>
                 </div>
-                <div class="section_discover_holiday_center_block_2">
+                <div class="section_discover_holiday_elem">
                     <span>Culture and Education</span>
                 </div>
-            </div>
-            <div class="section_discover_holiday_bottom_block">
-                <div class="section_discover_holiday_bottom_block_1">
-                    <span>Enjomet and Relaxation</span>
+                <div class="section_discover_holiday_elem">
+                    <span>Enjoiet and Relaxation</span>
                 </div>
-                <div class="section_discover_holiday_bottom_block_2">
+                <div class="section_discover_holiday_elem">
                     <span>Trevelling</span>
                 </div>
             </div>
         </section>
         <section class="section_create_holiday">
-            <h3>Crate your holiday activity</h3>
-            <p>Hi! What are your holiday interests?</p>
-            <div class="form_block">
-                <form action="">
+            <h3 class="title">Crate your holiday activity</h3>
+            <p class="description">Hi! What are your holiday interests?</p>
+            <div class="form_wrapper">
+                <form class="form" action="false">
                     <input type="text" placeholder="Enter your insterests">
-                    <button>Search partners</button>
+                    <button type="button">Search partners</button>
                 </form>
             </div>
         </section>
     </main>
-    <footer>
+    <footer class="footer">
         <div class="footer_container">
-            <div class="footer_block_left">
-                <span>DREAMSHARE</span>
-                <div class="footer_info">
-                    <span>Company</span>
-                    <ul>
-                        <li>About</li>
-                        <li>Contact</li>
-                        <li>Press</li>
-                        <li>Blog</li>
-                        <li>Terms and Privacy</li>
-                        <li>Help</li>
-                    </ul>
-                </div>
-                <span class="footer_block_left_partnets">Partners</span>
+            <h2 class="footer_box footer_title">DREAMSHARE</h2>
+            <div class="footer_box">
+                <h3 class="footer_subtitle">Company</h3>
+                <ul class="footer_list">
+                    <li>About</li>
+                    <li>Contact</li>
+                    <li>Press</li>
+                    <li>Blog</li>
+                    <li>Terms and Privacy</li>
+                    <li>Help</li>
+                </ul>
             </div>
-            <div class="footer_block_right">
-                <span>DIRECTED BY</span>
+            <div class="footer_box">
+                <h3 class="footer_subtitle">Partners</h3>
+            </div>
+            <div class="footer_box footer_logo">
+                <h3 class="footer_subtitle">DIRECTED BY</h3>
                 <img src="./assets/footer_emblem.jpg">
             </div>
         </div>
     </footer>
-    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <script src="./scripts/main.min.js"></script>
 </body>
+
 </html>

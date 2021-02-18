@@ -1,99 +1,79 @@
-@import '_mixin';
+@import "_variables";
+@import "_mixins";
 
-footer{
+.footer {
     height: 224px;
     width: 100%;
-    border-top: 2px solid #FF4E50;
+    border-top: 2px solid var(--main-col);
     margin-bottom: 36px;
 }
-.footer_container{
-    display: flex;
-    justify-content: space-between;
+.footer_container {
+    @include Flex(false, space-between, row, false);
     width: 940px;
     margin: 40px auto 0;
-    .footer_block_right{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        span{
-            color: #CCCCCC;
-            @include Fons('Montserrat,400', bold, 10px, 12px);
-            margin-bottom: 8px;
-            text-align: end;
-            width: 100%;
-        }
-    }
-    .footer_block_left{
-        display: flex;
-        justify-content: space-between;
-        width: 550px;        
-        span{
-            color: #FF4E50;
-            @include Fons('Montserrat,400', normal, 16px, 20px);
-        }
-        .footer_info span, .footer_block_left_partnets{
+    .footer_box{
+        flex-basis: 25%;
+        .footer_subtitle{
+            @include Fons("Montserrat,400", bold, 14px, 17px);
             color: #444444;
-            @include Fons('Montserrat,400', bold, 14px, 17px);
+            margin-bottom: 10px;
         }
-        .footer_info ul{
-            margin-bottom: 11px;
-        }
-        .footer_info ul li{
+        .footer_list li{
             list-style: none;
-            @include Fons('Roboto,300', 300, 14px, 26px);
+            @include Fons("Roboto,300", 300, 14px, 26px);
             color: #999999;
         }
+        &.footer_logo{
+            text-align: right;
+        }
+    }
+    .footer_title{
+        color: var(--main-col);
+        @include Fons("Montserrat,400", normal, 16px, 20px);
     }
 }
 
-@media (max-width: 1120px){
-    footer{
+// ** media queries **
+
+@media (max-width: 960px) {
+    .footer {
         margin-bottom: 20px;
         width: 100%;
     }
-    .footer_container{
+    .footer_container {
         width: 748px;
         margin: 40px auto 0;
-        .footer_block_left{
+        .footer_block_left {
             width: 450px;
         }
     }
 }
 
-@media (max-width: 768px){
-    footer{
-        height: 204px;
-        padding: 0 20px;
-        margin-bottom: 22px;
+@media screen and (max-width: 768px){
+    .footer .footer_container{
+        width: calc(100% - 30px);
+    }
+}
+
+@media screen and (max-width: 578px){
+    .footer {
         .footer_container{
+            margin-top: 30px;
             flex-direction: column;
-            margin-top: 19px;
-            width: 100%;
-            .footer_block_left{
-                margin-bottom: 14px;
-                width: 100%;
-                align-items: center;
-                flex-direction: column;
-                .footer_info{
-                    margin: 13px auto 6px;
-                    text-align: center;
-                    ul{
-                        display: flex;
-                        flex-wrap: wrap;
-                        justify-content: center;
-                        margin-bottom: 0;
-                    }
-                    ul li{
-                        margin: 0 5px;
-                    }
+            text-align: center;
+            .footer_list{
+                @include Flex(center, center, row, nowrap);
+                margin-bottom: 10px;
+                & li:not(:first-child){
+                    margin-left: 10px;
                 }
             }
-            .footer_block_right{
-                align-items: center;
-                span{
-                    text-align: center;
-                }
+            .footer_box.footer_logo{
+                text-align: center;
             }
+        }
+        .footer_title{
+            margin-bottom: 10px;
         }
     }
 }

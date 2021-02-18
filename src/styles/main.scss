@@ -1,12 +1,52 @@
-@import '_mixin';
+@import '_variables';
+@import '_mixins';
 @import '_fonts';
 @import '_reset';
 @import 'header';
 @import 'footer';
+@import '_loops';
 
-main{
+.main{
     width: 940px;
     margin: 95px auto 100px;
+}
+
+.container_top{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../assets/header/header_image.jpg');
+    background-position: center;
+    background-size: cover;
+    color: var(--sec-col);
+    .container_top_title{
+        @include Fons('Montserrat,600', bold, 52px, 63px);
+        text-align: center;
+        width: 470px;
+    }
+    .container_top_context{
+        @include Fons('Roboto,300', 300, 24px, 24px);
+        text-align: center;
+        margin: 30px auto 85px;
+    }
+    .container_top_button{
+        @include Fons('Montserrat,400', bold, 14px, 17px);
+        padding: 12px 19px 11px;
+        background-color: var(--main-col);
+        border-radius: 40px;
+        color: var(--sec-col);
+        border: none;
+        outline: none;
+        border: 2px solid var(--main-col);
+        transition: all 0.3s;
+        &:hover{
+            border-color: var(--sec-col);
+            background-color: transparent;
+        }
+    }
 }
 .section_dreamshare_works{
     width: 100%;
@@ -18,49 +58,58 @@ main{
     }
     .dreamshare_works_imgs{
         width: 100%;
-        display: flex;
-        justify-content: space-between;
-       div{
-           width: 300px;
-           height: 400px;
-           color: #FFFFFF;
-           padding: 0 25px 21px;
-           border-radius: 4px;
-           display: flex;
+        @include Flex(false, space-between, row, false);
+        .dreamshare_works_img{
+            flex-basis: calc(33.33% - 13px);
+            height: 400px;
+            color: #ffffff;
+            padding: 0 25px 21px;
+            overflow: hidden;
+            border-radius: 4px;
+            display: flex;
             flex-direction: column;
             justify-content: flex-end;
-           span{
-               @include Fons('Montserrat,400', normal, 10px, 12px);
-               letter-spacing: 2px;
-               padding: 5px 14px 3px;
-               background: #FF4E50;
-               width: max-content;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            &:after{
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 0px;
+                height: 0px;
+                background-color: rgba(#ff4e50, 0.5);
+                z-index: 0;
+                transition: all 0.3s;
+            }
+            &:hover{
+                &::after{
+                    transform: translate(-50%, -50%);
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            & > .icon{
+                @include Fons('Montserrat,400', normal, 14px, 12px);
+                letter-spacing: 2px;
+                padding: 5px 14px;
+                background: var(--main-col);
+                width: max-content;
                 border-radius: 40px;
-           }
-           h4{
-               @include Fons('Montserrat,400', bold, 24px, 26px);
-               margin: 15px auto 20px;
-               width: 100%;
-           }
-           p{
+                z-index: 1;
+            }
+            & > .title{
+                @include Fons('Montserrat,400', bold, 24px, 26px);
+                margin: 15px auto 20px;
+                width: 100%;
+                z-index: 1;
+            }
+            & > .description{
                 @include Fons('Roboto,300', 300, 14px, 14px);
                 color: #E3E3E3;
-           }
-       }
-       .dreamshare_works_imgs_1{
-           background-image: url('../assets/dreamshare_works/dreamshare_img_1.jpg');
-           background-position: center;
-            background-size: cover;
-       }
-       .dreamshare_works_imgs_2{
-            background-image: url('../assets/dreamshare_works/dreamshare_img_2.jpg');
-            background-position: center;
-            background-size: cover;
-        }
-        .dreamshare_works_imgs_3{
-            background-image: url('../assets/dreamshare_works/dreamshare_img_3.jpg');
-            background-position: center;
-            background-size: cover;
+                z-index: 1;
+            }
         }
     }
 }
@@ -72,13 +121,12 @@ main{
         @include Fons('Montserrat,400', bold, 26px, 32px);
         text-align: center;
     }
-    .meet_partner_partners_block{
+    .meet_partner_partners_wrapper{
         display: flex;
         justify-content: space-between;
         margin: 36px auto;
-        .partner_indivitual_block{
-            width: 221px;
-            height: 205px;
+        .partner_container{
+            width: 25%;
             text-align: center;
             div{
                 width: min-content;
@@ -89,45 +137,28 @@ main{
                 height: 120px;
                 border-radius: 50%;
             }
-            h4{
+            .title_name{
                 @include Fons('Montserrat,400', bold, 14px, 17px);
                 margin: 17px auto 15px;
             }
-            p{
+            .description{
                 @include Fons('Roboto,300', 300, 14px, 14px);
                 color: #666666;
+                width: 90%;
+                margin: auto;
             }
-            .indiv_img1, .indiv_img2, .indiv_img3, .indiv_img4{
+            .partner_photo_box{
                 position: relative;
             }
-            .indiv_img1:after, .indiv_img2:after, .indiv_img3:after, .indiv_img4:after{
+            .partner_photo_box:after{
                 width: 16px;
                 height: 16px;
                 border-radius: 50%;
                 position: absolute;
                 right: 0;
                 bottom: 0;
-                border: 4px solid white;
+                border: 4px solid var(--sec-col);
                 padding: 8px;
-            }
-            .indiv_img1:after{
-                content: url('../assets/meet_partner/icons/music.svg');
-                background-color: #FF4E50;
-                box-sizing: content-box;
-            }
-            .indiv_img2:after{
-                content: url('../assets/meet_partner/icons/pen.svg');
-                background-color: #19D4CA;
-                box-sizing: content-box;
-            }
-            .indiv_img3:after{
-                content: url('../assets/meet_partner/icons/camera.svg');
-                background-color: #FFA710;
-                box-sizing: content-box;
-            }
-            .indiv_img4:after{
-                content: url('../assets/meet_partner/icons/plane.svg');
-                background-color: #667DF3;
                 box-sizing: content-box;
             }
         }
@@ -136,12 +167,17 @@ main{
         text-align: center;
         button{
             @include Fons('Montserrat,400', bold, 14px, 17px);
-            color: #FF4E50;
+            color: var(--main-col);
             padding: 12px 22px 11px;
-            border: 2px solid #FF4E50;
-            background-color: white;
+            border: 2px solid var(--main-col);
+            background-color: var(--sec-col);
             border-radius: 40px;
             outline: none;
+            transition: color 0.5s, background-color 0.5s;
+            &:hover{
+                color: var(--sec-col);
+                background-color: var(--main-col);
+            }
         }
     }
 }
@@ -155,89 +191,70 @@ main{
         margin-bottom: 35px;
         text-align: center;
     }
-    .section_discover_holiday_top_block{
-        display: flex;
-        justify-content: space-between;
-        div{
-            border-radius: 4px;
+    .section_discover_holiday_box{
+        @include Flex(center, space-between, row, wrap);
+        .section_discover_holiday_elem{
+            @include Flex(center, center, false, false);
             text-align: center;
-           width: 300px;
-           height: 310px; 
-           display: flex;
-           align-items: center;
-           justify-content: center;
-        }
-        .section_discover_holiday_top_block_1{
-            background-image: url('../assets/discover_holiday/holiday_img_1.jpg');
+            background-size: cover;
             background-position: center;
-        }
-        .section_discover_holiday_top_block_2{
-            background-image: url('../assets/discover_holiday/holiday_img_2.jpg');
-            background-position: center;
-        }
-        .section_discover_holiday_top_block_3{
-            background-image: url('../assets/discover_holiday/holiday_img_3.jpg');
-            text-align: center;
-            background-position: center;
-        }
-    }
-    .section_discover_holiday_center_block{
-        display: flex;
-        justify-content: space-between;
-        margin: 20px auto;
-        div{
-            border-radius: 4px;
-           height: 310px; 
-           display: flex;
-           align-items: center;
-           justify-content: center;
-        }
-        .section_discover_holiday_center_block_1{
-            background-image: url('../assets/discover_holiday/holiday_img_4.jpg');
-            width: 300px;
-        }
-        .section_discover_holiday_center_block_2{
-            background-image: url('../assets/discover_holiday/holiday_img_5.jpg');
-            width: 620px;
-        }
-    }
-    .section_discover_holiday_bottom_block{
-        display: flex;
-        justify-content: space-between;
-        div{
-            border-radius: 4px;
-            height: 310px; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-         }
-        .section_discover_holiday_bottom_block_1{
-            background-image: url('../assets/discover_holiday/holiday_img_6.jpg');
-            width: 620px;
-        }
-        .section_discover_holiday_bottom_block_2{
-            background-image: url('../assets/discover_holiday/holiday_img_7.jpg');
-            width: 300px;
+            margin-bottom: 20px;
+            height: 280px;
+            padding: 10px;
+            position: relative;
+            overflow: hidden;
+            &:nth-child(1), &:nth-child(2), &:nth-child(3){
+                flex-basis: calc(33.33% - 13px);
+            }
+            &:nth-child(4), &:nth-child(7){
+                flex-basis: calc(40% - 10px);
+            }
+            &:nth-child(5), &:nth-child(6){
+                flex-basis: calc(60% - 10px);
+            }
+            span{
+                z-index: 1;
+            }
+            &::after, &::before{
+                content: '';
+                position: absolute;
+                width: 50%;
+                height: 0px;
+                background-color: rgba(#ff4e50, 0.5);
+                z-index: 0;
+                transition: height 0.3s;
+            }
+            &::after{
+                left: 50%;
+                bottom: 0;
+            }
+            &::before{
+                left: 0;
+                top: 0;
+            }
+            &:hover::after, &:hover::before{
+                height: 100%;
+            }
         }
     }
 }
 .section_create_holiday{
     width: 100%;
-    margin: 95px auto 100px;
+    margin: 90px auto;
     text-align: center;
-    h3{
+    & > .title{
         @include Fons('Montserrat,400', bold, 26px, 32px);
         color: #444444;
     }
-    p{
+    & > .description{
         @include Fons('Roboto,300', 300, 18px, 24px);
         color: #666666;
         margin: 43px auto 25px;
     }
-    .form_block{
+    .form_wrapper{
         width: 500px;
         margin: 0 auto;
-        form{
+        .form{
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -247,48 +264,48 @@ main{
                 width: 300px;
                 height: 40px;
                 padding-left: 10px;
+                &:focus{
+                    border: 1px solid var(--main-col);
+                    border-radius: 3px;
+                }
             }
             button{
                 @include Fons('Montserrat,400', bold, 14px, 17px);
                 color: #FFFFFF;
                 padding: 12px 27px 11px;
-                background: #FF4E50;
+                background: var(--main-col);
                 border-radius: 40px;
-                border: none;
-                outline: none;
+                border: 2px solid var(--main-col);
+                transition: all 0.3s;
+                &:hover{
+                    border-color: var(--main-col);
+                    background-color: transparent;
+                    color: var(--main-col);
+                }
             }
         }
     }
 }
 
-@media (max-width: 1120px){
+// ** media queries **
+
+@media screen and (max-width: 960px){
     body{
         width: 100%;
     }
-    main{
+    .main{
         width: 748px;
-    }
-    .section_dreamshare_works{
-        .dreamshare_works_imgs{
-            & div{
-                width: 236px;
-                padding: 0 20px 16px;
-                h4{
-                    line-height: 14px;
-                }
-            }
-        }
     }
     .section_meet_partner{
         width: 492px;
         .meet_partner_title{
             @include Fons('Montserrat,400', bold, 22px, 27px);
         }
-        .meet_partner_partners_block{
+        .meet_partner_partners_wrapper{
             flex-wrap: wrap;
             margin-bottom: 40px;
-            .partner_indivitual_block {
-                width: 236px;
+            .partner_container {
+                width: 50%;
                 &:first-child{
                     margin-bottom: 54px;
                 }
@@ -296,133 +313,45 @@ main{
         }
         
     }
-    .section_discover_holiday{
-        .section_discover_holiday_title{
-            @include Fons('Montserrat,400', bold, 22px, 27px);
-        }
-        .section_discover_holiday_top_block div{
-            width: 236px;
-            padding: 0 15px;
-        }
-        .section_discover_holiday_center_block{
-            .section_discover_holiday_center_block_1{
-                width: 236px;
-                padding: 0 15px;
-            }
-            .section_discover_holiday_center_block_2{
-                width: 492px;
-                padding: 0 15px;
-            }
-        }
-        .section_discover_holiday_bottom_block{
-            .section_discover_holiday_bottom_block_1{
-                width: 492px;
-                padding: 0 15px;
-            }
-            .section_discover_holiday_bottom_block_2{
-                width: 236px;
-                padding: 0 15px;
-            }
-        }
+    .section_discover_holiday .section_discover_holiday_title,
+    .section_create_holiday > .title{
+        @include Fons('Montserrat,400', bold, 22px, 27px);
     }
-    .section_create_holiday{
-        h3{
-            @include Fons('Montserrat,400', bold, 22px, 27px);
+}
+
+@media screen and (max-width: 768px){
+    .main{
+        width: calc(100% - 30px);
+        margin: 35px auto 40px;
+    }
+    .section_dreamshare_works .dreamshare_works_imgs{
+        flex-direction: column;
+        .dreamshare_works_img{
+            flex-basis: 240px;
+            &:not(:first-child){
+                margin-top: 20px;
+            }
         }
     }
 }
 
-@media (max-width: 768px){
-    body{
-        width: 100%;
-    }
-    main{
-        width: 300px;
-        margin: 35px auto 40px;
-    }
-    .section_dreamshare_works{
-        .dreamshare_works_title{
-            margin-bottom: 15px;
-        }
-        .dreamshare_works_imgs{
-            flex-direction: column;
-            div{
-                width: 300px;
-                height: 240px;
-                padding: 0 30px 16px 20px;
-            }
-            .dreamshare_works_imgs_1, .dreamshare_works_imgs_2{
-                margin-bottom: 10px;
-            }
-        }
-    }
+@media screen and (max-width: 578px){
     .section_meet_partner{
-        margin: 35px auto;
-        width: 300px;
-        .meet_partner_partners_block {
-            justify-content: center;
-            margin: 14px auto 26px;
-            .partner_indivitual_block:first-child{
-                margin-bottom: 16px;
-            }
-            .partner_indivitual_block {
-                margin-bottom: 16px;
-            }
+        width: 100%;
+        .meet_partner_partners_wrapper .partner_container{
+            width: 100%;
+            margin-bottom: 50px;
         }
     }
-    .section_discover_holiday{
-        .section_discover_holiday_title{
-            margin-bottom: 33px;
-        }
-        .section_discover_holiday_top_block, .section_discover_holiday_center_block, .section_discover_holiday_bottom_block{
+    .section_discover_holiday_elem{
+        flex-basis: 100%!important;
+    }
+    .section_create_holiday .form_wrapper{
+        width: 100%;
+        .form{
             flex-direction: column;
-            align-items: center;
-            margin: 0;
-            div{
-                height: 120px;
-                width: 300px;
-                padding: 0 47px;
-                margin-bottom: 10px;
-            }
-        }
-        .section_discover_holiday_center_block{
-            .section_discover_holiday_center_block_1, .section_discover_holiday_center_block_2{
-                height: 120px;
-                width: 300px;
-                padding: 0 47px;
-                margin-bottom: 10px;
-            }
-            .section_discover_holiday_center_block_2{
-                padding: 0;
-            }
-        }
-        .section_discover_holiday_bottom_block{
-            .section_discover_holiday_bottom_block_1, .section_discover_holiday_bottom_block_2{
-                height: 120px;
-                width: 300px;
-                margin-bottom: 10px;
-            }
-        }
-    }
-    .section_create_holiday{
-        margin: 35px auto 0px;
-        h3{
-            margin: 0 10px;
-        }
-        p{
-            margin: 9px auto 15px;
-        }
-        .form_block{
-            width: 280px;
-            form{
-                flex-direction: column;
-                input{
-                    width: 100%;
-                }
-                button{
-                    margin-top: 10px;
-                    width: 100%;
-                }
+            button{
+                margin-top: 20px;
             }
         }
     }

@@ -1,0 +1,37 @@
+@mixin Fons($font_family, $font_weight, $font_size, $line_height) {
+    @if $font_family{
+    	font-family: $font_family;
+    }
+
+    @if $font_weight{
+    	font-weight: $font_weight;
+    }
+
+    @if $font_size{
+    	font-size: $font_size;
+    }
+
+    @if $line_height{
+    	line-height: $line_height;
+    }
+}
+
+@mixin Flex($AlignItems, $justifyContent, $flexDirection, $flexWrap) {
+    display: flex;
+
+    @if $AlignItems{
+    	align-items: $AlignItems;
+    }
+
+    @if $justifyContent{
+    	justify-content: $justifyContent;
+    }
+
+    @if $flexDirection{
+    	flex-direction: $flexDirection;
+    }
+
+    @if $flexWrap{
+    	flex-wrap: $flexWrap;
+    } 
+}

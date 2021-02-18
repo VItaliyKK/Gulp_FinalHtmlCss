@@ -1,0 +1,30 @@
+$partnersIconCol: ('1': #FF4E50, '2': #19D4CA, '3': #FFA710, '4': #667DF3);
+$partnersIconBackgr: ('1':"music", '2': "pen", '3': "camera", '4': "plane");
+
+// ** set content for pseudo-element of 'partner_photo_box' **
+@each $i, $file in $partnersIconBackgr {
+    .partner_container:nth-child(#{$i}) .partner_photo_box:after{
+        content: url('../assets/meet_partner/icons/#{$file}.svg');
+    }
+}
+
+// ** set background-color for pseudo-element of 'partner_photo_box' **
+@each $i, $color in $partnersIconCol {
+    .partner_container:nth-child(#{$i}) .partner_photo_box:after{
+        background-color: #{$color};
+    }
+}
+
+// ** set background-image for child elements of 'section_discover_holiday' **
+@for $i from 1 to 8 {
+    .section_discover_holiday_elem:nth-child(#{$i}) {
+        background-image: url('../assets/discover_holiday/holiday_img_#{$i}.jpg');
+    }
+}
+
+// ** set background-image for child elements of 'dreamshare_works' **
+@for $i from 1 to 4 {
+    .dreamshare_works_img:nth-child(#{$i}){
+        background-image: url('../assets/dreamshare_works/dreamshare_img_#{$i}.jpg');
+    }
+}
